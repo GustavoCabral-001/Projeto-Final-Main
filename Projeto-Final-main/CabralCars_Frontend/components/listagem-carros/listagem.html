@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="site de venda de carros">
+    <meta name="keywords" content="venda, carros">
+    <meta name="author" content="Gustavo">
+    <link rel="stylesheet" href="listagem.css">
+    <script src="listagem.js" defer></script>
+    <title>Veículos especiais</title>
+</head>
+<body>
+    <header>
+        <div class="center">
+            <img src="../../assets/images/logo.jpg" alt="Logo da Empresa" class="logo">
+            <nav class="menu">
+                <ul>
+                    <li><a href="../../index.html">HOME</a></li>
+                    <li><a style="color: red;" href="../listagem-carros/listagem.html">VENDA</a></li>
+                </ul>
+            </nav>
+            <div class="x" onclick="exitMenu()"></div>
+            <nav class="menu-mobile" onclick="menuOpen(this)">
+                <ul id="ul">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a style="color: white;" href="../../vendas.html">Venda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+        <div class="container-venda">
+            <div class="head-venda">
+                <section class="line-titulo"></section>
+                <section class="titulo-vendas"><h2>VEÍCULOS PARA VENDA</h2></section>
+                <section class="line-titulo"></section>
+            </div>
+            <div class="button" id="buttonContainer">
+                <div class="publicar-annucio"><a href="../../components/cadastro-carro/cadastro-carro.html">Publicar Anúncio</a></div>
+            </div>
+            
+            <!-- Filtros de pesquisa ao lado da lista de carros -->
+            <div class="filtros-e-lista">
+                <div class="filtros">
+                    <label for="nomeCarro">Nome do Carro</label>
+                    <input type="text" id="nomeCarroFiltro" placeholder="Filtrar por nome">
+
+                    <label for="preco">Preço Máximo</label>
+                    <input type="number" id="precoFiltro" placeholder="Filtrar por preço">
+
+                    <label for="cor">Cor</label>
+                    <input type="text" id="corFiltro" placeholder="Filtrar por cor">
+
+                    <label for="ano">Ano</label>
+                    <input type="number" id="anoFiltro" placeholder="Filtrar por ano">
+
+                    <button onclick="aplicarFiltros()">Aplicar Filtros</button>
+                </div>
+
+                <!-- Lista de Carros -->
+                <div class="conteudo-vendas">
+                    <section class="wraper-venda-carros" id="carList">
+                        <!-- Conteúdo gerado dinamicamente -->
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="center">
+            <nav class="menu">
+                <ul>
+                    <li><a href="../../index.html">HOME</a></li>
+                    <li><a style="color: red;" href="../listagem-carros/listagem.html">VENDA</a></li>
+                </ul>
+            </nav>
+            <div class="direitos">
+                <p style="padding-right: 4px;">Todos os direitos reservados a</p>
+                <h4>Cabrals Cars</h4>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

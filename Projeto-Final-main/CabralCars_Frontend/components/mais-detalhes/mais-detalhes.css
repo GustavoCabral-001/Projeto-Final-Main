@@ -1,0 +1,222 @@
+/* Reset e ajustes gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header aprimorado */
+header {
+    background-color: white;
+    padding: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+header .center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+/* Menu centralizado */
+header .menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+header .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+header .menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+header .menu ul li a:hover {
+    color: #ba2036;
+}
+
+/* Layout principal */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Reduz espaço interno */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Reduz largura máxima */
+    margin: 20px auto; /* Reduz espaço externo */
+}
+
+#carDetails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Imagem do carro */
+.car-image {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-right: 2px solid #ddd;
+}
+
+.car-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Detalhes do carro */
+.car-details {
+    flex: 1;
+    max-width: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.car-details h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.car-details .car-price {
+    font-size: 24px;
+    color: #ba2036;
+    font-weight: bold;
+}
+
+.car-details p {
+    font-size: 16px;
+    color: #555;
+}
+
+.car-details ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.car-details ul li {
+    font-size: 14px;
+    color: #444;
+    background-color: #f9f9f9;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Botão de ação */
+.car-details .buy-button {
+    display: inline-block;
+    background-color: #ba2036;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.car-details .buy-button:hover {
+    background-color: #900024;
+}
+
+/* Footer aprimorado */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+footer .menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer .menu ul li a:hover {
+    color: #ba2036;
+}
+
+footer .direitos {
+    font-size: 12px;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #carDetails {
+        flex-direction: column;
+        border: none;
+    }
+
+    .car-image {
+        border-right: none;
+    }
+
+    .car-details {
+        text-align: center;
+        align-items: center;
+    }
+}

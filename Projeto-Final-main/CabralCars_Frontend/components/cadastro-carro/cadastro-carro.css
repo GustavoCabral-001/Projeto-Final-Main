@@ -1,0 +1,129 @@
+/* Definições básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.center {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para o cabeçalho */
+header {
+    background-color: #333;
+    padding: 15px 0;
+}
+
+header .center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 100px; /* Logo menor */
+    height: auto;
+}
+
+.menu {
+    flex: 1; /* Expande o menu para usar o espaço disponível */
+    display: flex;
+    justify-content:center; /* Centraliza os itens do menu */
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #ff6666;
+}
+
+/* Estilos para o título */
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+}
+
+/* Estilos para o formulário */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+form h2 {
+    margin-bottom: 15px;
+    color: #444;
+    text-align: center;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form input[type="date"]:focus {
+    border-color: #333;
+    outline: none;
+}
+
+/* Estilos para o botão de envio */
+form button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+form button[type="submit"]:hover {
+    background-color: #ff6666;
+}
+
+/* Estilos para o botão "Cancelar" */
+form button.cancelar {
+    background-color: #fff;
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid red;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+form button.cancelar:hover {
+    background-color: red;
+    color: #fff;
+}

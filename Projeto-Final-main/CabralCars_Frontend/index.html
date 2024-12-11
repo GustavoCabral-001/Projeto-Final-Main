@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="site de venda de carros">
+    <meta name="keywords" content="venda, carros">
+    <meta name="author" content="Gustavo">
+    <link rel="stylesheet" href="../CabralCars_Frontend/projeto pratico 5.css">
+    <title>Veículos especiais</title>
+</head>
+<body>
+    <header> <!-- cabeça do site-->
+        <div class="center">
+            <img src="../CabralCars_Frontend/assets/images/logo.jpg" alt="Logo da Empresa" class="logo">
+            <nav class="menu">
+                <ul>
+                    <li><a style="color: red;" href="../CabralCars_Frontend/index.html">HOME</a></li>
+                    <li><a href="../CabralCars_Frontend/components/listagem-carros/listagem.html">VENDA</a></li>
+                </ul>
+            </nav>
+            <div class="x" onclick="exitMenu()"></div> <!-- java script buttom para fechar o menu mobile-->
+            <nav class="menu-mobile" onclick="menuOpen(this)"> <!-- menu mobile-->
+                <ul id="ul">
+                    <li><a style="color: white;" href="../CabralCars_Frontend/index.html">Home</a></li>
+                    <li><a href="../CabralCars_Frontend/components/listagem-carros/listagem.html">venda</a></li>
+               </ul>
+            </nav>
+            <div class="user-info">
+                <span id="usuarioNome" class="user-name"></span>
+                <div id="userMenu" class="user-menu">
+                    <p id="userEmail"></p>
+                    <button id="btnLogout">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main> <!-- conteudo-->
+        <div class="banner"> <!-- banner-->
+            <div class="container">
+                <div class="text"><h2>CONSULTORIA</h2></div>
+                <div class="text"><h2>COMPRA</h2></div>
+                <div class="text"><h2>VENDA</h2></div>
+                <div class="text-contato"><p>CONTATO@VEICULOSESPECIAIS.COM.BR</p></div>
+            </div>
+        </div>
+
+        <div class="vitrine"> <!-- vitrine de carros-->
+            <div class="center">
+                <section class="wraper-head"></section>
+                <section class="wraper-titulo"><h2>VEÍCULOS EM DESTAQUE</h2></section>
+                <section class="wraper-head"></section>
+                <section class="wraper-carros">
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer> <!--rodapé-->
+        <div class="center">
+            <nav class="menu">
+                <ul>
+                    <li><a style="color: red;" href="../CabralCars_Frontend/index.html">HOME</a></li>
+                    <li><a href="../CabralCars_Frontend/components/listagem-carros/listagem.html">VENDA</a></li>
+                </ul>
+            </nav>
+            <div class="direitos">
+                <p style="padding-right: 4px;">Todos os direitos reservados a</p>
+                <h4>Cabrals Cars</h4>
+            </div>
+        </div>
+    </footer>
+    <script src="home.js"></script>
+</body>
+</html>

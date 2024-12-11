@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda de Carros - Adicionar Carro</title>
+    <link rel="stylesheet" href="cadastro-carro.css">
+</head>
+<body>
+    <header> <!-- Cabeçalho do site -->
+        <div class="center">
+            <img src="../../assets/images/logo.jpg" alt="Logo da Empresa" class="logo">
+            <nav class="menu">
+                <ul>
+                    <li><a style="color: red;" href="../../index.html">HOME</a></li>
+                    <li><a href="../listagem-carros/listagem.html">VENDA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h1>Cadastro de Carros</h1>
+
+    <form id="carForm">
+        <input type="text" id="nomeCarro" placeholder="Nome do Carro" required>
+        <input type="text" id="modeloID" placeholder="Modelo ID" required>
+        <input type="text" id="descricao" placeholder="Descrição" required>
+        <input type="number" id="ano" placeholder="Ano" required>
+        <input type="text" id="preco" placeholder="Preço" required>
+        <input type="text" id="cor" placeholder="Cor" required>
+        <input type="number" id="quilometragem" placeholder="Quilometragem" required>
+        <input type="text" id="ImagemUrl" placeholder="Imagem URL" required>
+        
+        <!-- Área para exibir a pré-visualização da imagem -->
+        <div id="previewContainer">
+            <img id="imagePreview" src="" alt="Pré-visualização da imagem do carro" style="display: none; max-width: 300px; margin-top: 15px;">
+        </div>
+
+        <button type="submit">Adicionar Carro</button>
+        <button type="button" class="cancelar" onclick="window.location.href='../listagem-carros/listagem.html'">Cancelar</button> <!-- Botão cancelar -->
+    </form>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const imagemUrlInput = document.getElementById('ImagemUrl');
+            const imagePreview = document.getElementById('imagePreview');
+
+            // Pré-visualização da imagem
+            imagemUrlInput.addEventListener('input', function() {
+                const url = imagemUrlInput.value;
+
+                if (url) {
+                    imagePreview.src = url;
+                    imagePreview.style.display = 'block';
+                } else {
+                    imagePreview.style.display = 'none';
+                }
+            });
+
+            const form = document.getElementById('carForm');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Coletando os dados do formulário
+                const nomeCarro = document.getElementById('nomeCarro').value;
+                const modeloID = document.getElementById('modeloID').value;
+                const descricao = document.getElementById('descricao').value;
+                const ano = document.getElementById('ano').value;
+                const preco = document.getElementById('preco').value;
+                const cor = document.getElementById('cor').value;
+                const quilometragem = document.getElementById('quilometragem').value;
+                const imagemUrl = document.getElementById('ImagemUrl').value;
+
+                // Validando se todos os campos foram preenchidos
+                if (!nomeCarro || !modeloID || !descricao || !ano || !preco || !cor || !quilometragem || !imagemUrl) {
+                    alert("Por favor, preencha todos os campos.");
+                    return;
+                }
+
+                // Criar objeto com os dados do carro
+                const carData = {
+                    Nome: nomeCarro,
+                    ModeloID: modeloID,
+                    Descricao: descricao,
+                    Ano: ano,
+                    Preco: preco,
+                    Cor: cor,
+                    Quilometragem: quilometragem,
+                    ImagemUrl: imagemUrl
+                };
+
+                // Enviar os dados para o servidor usando fetch
+                fetch('http://localhost:3000/carros', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(carData)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert("Carro cadastrado com sucesso!");
+                        form.reset(); // Limpar o formulário após o envio
+                    } else {
+                        alert("Erro ao cadastrar o carro. Tente novamente.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    alert("Erro ao enviar os dados. Tente novamente.");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
